@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <conio.h>
 #include "stackSLL.h"
 
 int nodeCount = 0;
