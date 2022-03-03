@@ -34,6 +34,8 @@ void push(NODE *new, NODE **L){
 
     new->next = *L;
     new->prev = NULL;
+    if(*L != NULL)
+        (*L)->prev = NULL;
     *L = new;
     printf("\n\nSUCCESS: New record pushed to the top!\n\n");
     nodeCount++; 
@@ -59,8 +61,6 @@ void pop(NODE **L, int position){
             currentPos++;
             nodeCount--;
         }
-        if (current_node == NULL)
-             *L = NULL;
         printf("\n\nSUCCESS: Delete successful!\n\n");
     }
 }
