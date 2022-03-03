@@ -61,8 +61,6 @@ void pop(NODE **L, int position){
             currentPos++;
             nodeCount--;
         }
-        if (current_node == NULL || current_node)
-             *L = NULL;
         printf("\n\nSUCCESS: Delete successful!\n\n");
     }
 }
