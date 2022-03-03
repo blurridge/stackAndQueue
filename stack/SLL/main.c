@@ -15,7 +15,7 @@ int main(){
     clearScr();
     printf("Welcome to Machacon and Miole's Phonebook!\n\n");
     printf("Loading...\n\n");
-    delay(2);
+    pause();
     clearScr();
     do{
         showMenu();
@@ -69,16 +69,17 @@ int main(){
                 pop(&head, position);
             }
         }
+        
     if(choice != 'e')
     {
-        delay(1);
+        pause();
         clearScr();
     }
     else
     {
         clearScr();
         printf("Thank you! See you next time!\n\n");
-        delay(1);
+        pause();
         clearScr();
     }
     }while(choice != 'e');
