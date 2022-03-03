@@ -32,10 +32,10 @@ void assign(NODE **new, char person[], char number[]){
 
 void push(NODE *new, NODE **L){
 
-    new->next = *L;
-    new->prev = NULL;
     if(*L != NULL)
         (*L)->prev = NULL;
+    new->next = *L;
+    new->prev = NULL;
     *L = new;
     printf("\n\nSUCCESS: New record pushed to the top!\n\n");
     nodeCount++; 
@@ -53,11 +53,11 @@ void pop(NODE **L, int position){
         current_node = *L;
         while(currentPos <= position)
         {
-            if (current_node->next != NULL)
-                *L = current_node->next;
+            *L = current_node->next;
             free(current_node);
             current_node = *L;
-            current_node->prev = NULL;
+            if(current_node != NULL)
+                current_node->prev = NULL;
             currentPos++;
             nodeCount--;
         }
