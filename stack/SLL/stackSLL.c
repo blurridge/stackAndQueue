@@ -72,12 +72,8 @@ void showData(NODE *L){
             printf("%d contact available\n\n", nodeCount);
         else
             printf("%d contacts available\n\n", nodeCount);
-        while(L != NULL)
-        {
+        for(; L != NULL; L = L->next, i++)
             printf("%d. %-35s\t\t\t%s\n", i, L->name, L->phone);
-            i++;
-            L = L->next;
-        }
         printf("\n");
     }
 }
