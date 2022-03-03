@@ -90,6 +90,15 @@ void delay(int seconds)
 {
     int milli_seconds = 1000 * seconds;
     clock_t start_time = clock();
-    while (clock() < start_time + milli_seconds)
-        ;
+    while (clock() < start_time + milli_seconds);
+}
+
+void pause(){
+    #ifdef _WIN32
+        delay(2);
+    #elif __APPLE__
+        delay(2000);
+    #elif __unix__
+        delay(2000);
+    #endif
 }
