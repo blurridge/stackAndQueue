@@ -15,5 +15,6 @@ void pop(NODE **L, int position);
 void showData(NODE *L);
 void clearScr();
 void delay(int seconds);
+void pause();
 
 #endif
