@@ -51,13 +51,16 @@ void pop(NODE **L, int position){
         current_node = *L;
         while(currentPos <= position)
         {
-            *L = current_node->next;
+            if (current_node->next != NULL)
+                *L = current_node->next;
             free(current_node);
             current_node = *L;
             current_node->prev = NULL;
             currentPos++;
             nodeCount--;
         }
+        if (current_node == NULL)
+             *L = NULL;
         printf("\n\nSUCCESS: Delete successful!\n\n");
     }
 }
