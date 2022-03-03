@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <conio.h>
 #include "queueDLL.h"
 
 extern int nodeCount, maxCap;
@@ -50,8 +49,9 @@ int main(){
         {
             clearScr();
             showData(head);
-            printf("Press any key to continue...");
-            getch();
+            printf("Press ENTER key to continue...");
+            fflush(stdin);
+            getchar();
         }
         
     if(choice != 'e')

@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <conio.h>
 #include "queueDLL.h"
 
 int nodeCount = 0, maxCap = 3;
