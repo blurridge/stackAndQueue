@@ -4,13 +4,14 @@
 #include <time.h>
 #include "queueDLL.h"
 
-int nodeCount = 0, maxCap = 3;
+int nodeCount = 0;
 
 void showMenu(){
 
     printf("Menu:\n");
     printf("[a]ppend\n");
     printf("[b]rowse\n");
+    printf("[d]elete\n");
     printf("[e]xit\n");
 }
 
@@ -53,15 +54,18 @@ void deQueue(NODE **L){
     NODE *current_node = malloc(sizeof(NODE));
     if(current_node == NULL)
         printf("ERROR: Not enough memory on this device to carry out this operation!\n");
+    else if(*L == NULL)
+        printf("\n\nERROR: No records available.\n\n");
     else
     {
         current_node = *L;
         *L = current_node->next;
-        (*L)->prev = NULL;
+        if(*L != NULL)
+            (*L)->prev = NULL;
         free(current_node);
         printf("SUCCESS: Front record dequeued!\n\n");
+        nodeCount--;
     }
-    nodeCount--;
 }
 
 void showData(NODE *L){
