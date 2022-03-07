@@ -11,6 +11,7 @@ void showMenu(){
     printf("Menu:\n");
     printf("[a]ppend\n");
     printf("[b]rowse\n");
+    printf("[c]peek top\n");
     printf("[d]elete\n");
     printf("[e]xit\n");
 }
@@ -96,4 +97,17 @@ void pause(){
     #elif __unix__
         delay(2000);
     #endif
+}
+
+void peek(NODE *L){
+
+    if(L == NULL)
+        printf("\n\nERROR: No records available.\n\n");
+    else
+    {
+        printf("\n\nPhonebook\n\n");
+        printf("Top contact: \n");
+        printf("1. %-35s\t\t\t%s\n", L->name, L->phone);
+        printf("\n");
+    }  
 }
