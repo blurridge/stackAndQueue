@@ -33,7 +33,7 @@ void assign(NODE **new, char person[], char number[]){
 void push(NODE *new, NODE **L){
 
     if(*L != NULL)
-        (*L)->prev = NULL;
+        (*L)->prev = new;
     new->next = *L;
     new->prev = NULL;
     *L = new;
