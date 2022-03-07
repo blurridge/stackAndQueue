@@ -16,5 +16,6 @@ void showData(NODE *L);
 void clearScr();
 void delay(int seconds);
 void pause();
+void peek(NODE *L);
 
 #endif
