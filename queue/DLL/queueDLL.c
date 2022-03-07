@@ -57,6 +57,7 @@ void deQueue(NODE **L){
     {
         current_node = *L;
         *L = current_node->next;
+        (*L)->prev = NULL;
         free(current_node);
         printf("SUCCESS: Front record dequeued!\n\n");
     }
