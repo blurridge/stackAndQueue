@@ -4,7 +4,7 @@
 #include <time.h>
 #include "queueDLL.h"
 
-extern int nodeCount, maxCap;
+extern int nodeCount;
 
 int main(){
 
@@ -20,7 +20,7 @@ int main(){
         showMenu();
         printf("Choice : ");
         scanf(" %c", &choice);
-        while(choice < 'a' || choice == 'c' || choice == 'd' || choice > 'e')
+        while(choice < 'a' || choice == 'c' || choice > 'e')
         {
             printf("You have entered an invalid choice. Please try again.\n");
             printf("Choice : ");
@@ -40,8 +40,6 @@ int main(){
                 scanf(" %[^\n]s", number);
                 assign(&new_node, name, number);
                 enQueue(new_node, &head);
-                if(nodeCount > maxCap)
-                    deQueue(&head);
             }
         }
 
@@ -52,6 +50,12 @@ int main(){
             printf("Press ENTER key to continue...");
             fflush(stdin);
             getchar();
+        }
+
+        else if(choice == 'd')
+        {   
+            clearScr();
+            deQueue(&head);
         }
         
     if(choice != 'e')
