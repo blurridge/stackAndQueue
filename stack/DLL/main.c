@@ -21,7 +21,7 @@ int main(){
         showMenu();
         printf("Choice : ");
         scanf(" %c", &choice);
-        while(choice < 'a' || choice == 'c' || choice > 'e')
+        while(choice < 'a' || choice > 'e')
         {
             printf("You have entered an invalid choice. Please try again.\n");
             printf("Choice : ");
@@ -48,8 +48,18 @@ int main(){
         {
             clearScr();
             showData(head);
-            printf("Press any key to continue...");
-            getch();
+            printf("Press ENTER key to continue...");
+            fflush(stdin);
+            getchar();
+        }
+
+        else if(choice == 'c')
+        {
+            clearScr();
+            peek(head);
+            printf("Press ENTER key to continue...");
+            fflush(stdin);
+            getchar();
         }
 
         else if(choice == 'd')
